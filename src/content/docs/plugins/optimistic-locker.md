@@ -68,6 +68,7 @@ public class YourEntity {
 ## 注意事项
 
 - 支持的数据类型包括：`int`, `Integer`, `long`, `Long`, `Date`, `Timestamp`, `LocalDateTime`。
+- 在数据表设计时将该（如上述的version）字段的默认值设置为一个初始值，如：0；或者在数据添加时设置其初始值，在数据更新时它的值不能是null，否则乐观锁不起作用
 - 对于整数类型，`newVersion` 是 `oldVersion + 1`。
 - `newVersion` 会自动回写到实体对象中。
 - 支持内置的 `updateById(entity)` 和 `update(entity, wrapper)`, `saveOrUpdate(entity)`, `insertOrUpdate(entity) (version >=3.5.7)` 方法。
